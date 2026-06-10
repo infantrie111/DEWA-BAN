@@ -133,7 +133,7 @@ a {
 	background-color: rgba(17, 17, 17, 0.95);
 	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(12px);
-	border-bottom: 2px solid var(--db-maroon);
+	border-bottom: 3px solid var(--db-maroon);
 	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
 	padding-top: 14px;
 	padding-bottom: 14px;
@@ -331,10 +331,11 @@ a {
 	display: block;
 	color: var(--db-white-pure); /* atau var(--db-maroon) jika ingin kontras maroon */
 	font-family: var(--font-heading);
-	font-size: 2em;
+	font-style: italic;
+	font-size: 1.5em;
 	font-weight: 600;
 	letter-spacing: 0.05em;
-	margin: 0 0 0.5em;
+	margin: 0 0 1.5em;
 	text-transform: uppercase;
 }
 
@@ -808,21 +809,49 @@ a {
    9. CONTACT PAGE
 ───────────────────────────────────────── */
 
-/* Tread stripe accent at top */
+/* Dark Mode for Contact Page */
 .contact-page {
 	padding-top: 0 !important;
+	background: linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.85)), url('../images/Header.jpeg') center top / cover no-repeat fixed !important;
+	color: var(--db-white-pure) !important;
 }
 
-.contact-page::before {
-	content: '';
+.contact-page .contact-intro h2,
+.contact-page .contact-info h2,
+.contact-page .contact-map h2,
+.contact-page .contact-list strong,
+.contact-page .hours-label,
+.contact-page .hours-list li span:first-child,
+.contact-page .hours-list li span:last-child {
+	color: var(--db-white-pure) !important;
+}
+
+.contact-page .contact-intro h3,
+.contact-page .contact-intro p,
+.contact-page .contact-list span {
+	color: rgba(240, 236, 230, 0.88) !important;
+}
+
+.contact-page .contact-info h2,
+.contact-page .contact-map h2,
+.contact-page .hours-label {
+	border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.contact-page .contact-list li,
+.contact-page .hours-list li,
+.contact-page .contact-intro {
+	border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.contact-page .contact-info {
+	border-right-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Custom Justify Text */
+.text-justify-custom {
+	text-align: justify !important;
 	display: block;
-	height: 5px;
-	background: linear-gradient(
-		90deg,
-		var(--db-maroon) 0%,
-		var(--db-maroon-hover) 50%,
-		var(--db-maroon) 100%
-	);
 }
 
 #content {
@@ -1000,17 +1029,22 @@ a {
 	border-top: 3px solid var(--db-maroon);
 }
 
+.contact-footer section {
+	text-align: center;
+}
+
 .contact-footer h2 {
 	font-size: 2em;
 	color: var(--db-white-pure) !important;
 	margin: 0 0 0.5em;
+	text-align: center;
 }
 
 .contact-footer p {
 	color: var(--db-gray-light) !important;
 	max-width: 520px;
 	margin: 0 auto 1.8em;
-	text-align: center;
+	text-align: center !important;
 }
 
 .contact-footer .cta-wrap {
@@ -1184,6 +1218,15 @@ a {
 }
 
 @media screen and (max-width: 736px) {
+	.text-justify-custom {
+		text-align: left !important;
+	}
+
+	.subpage #page-wrapper > .nav-container + * ,
+	.contact-page {
+		padding-top: 20px !important;
+	}
+
 	.nav-container {
 		padding: 0 20px;
 	}
@@ -1351,7 +1394,7 @@ a {
 		background-color: rgba(17, 17, 17, 0.97);
 		backdrop-filter: blur(14px);
 		-webkit-backdrop-filter: blur(14px);
-		border-bottom: 2px solid var(--db-maroon);
+		border-bottom: 3px solid var(--db-maroon);
 		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 	}
 
@@ -1413,7 +1456,7 @@ a {
 
 	.subpage #page-wrapper > .nav-container + * ,
 	.contact-page {
-		padding-top: 70px !important;
+		padding-top: 20px !important;
 	}
 
 	/* ── Hero adjustments ── */
@@ -1427,8 +1470,9 @@ a {
 	}
 
 	.hero-subtitle-text {
-		font-size: 1.1em;
-		margin-bottom: 0.3em;
+		font-style: italic;
+		font-size: 0.9em;
+		margin-bottom: 1em;
 	}
 
 	.hero-desc {
